@@ -1,0 +1,9 @@
+name: DialogApiTest
+version: '1.0.0'
+main: alepando.dev.dialogApiTest.DialogApiTest
+api-version: '1.21'
+
+commands:
+  test:
+    description: test command
+    usage: /<command>
