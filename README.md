@@ -19,6 +19,6 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.AlepandoCR:DialogAPI:v1.0.8")
+    implementation("com.github.AlepandoCR:DialogAPI:v1.1.1")
 }
 ```
