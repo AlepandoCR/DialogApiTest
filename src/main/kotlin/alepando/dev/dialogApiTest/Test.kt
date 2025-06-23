@@ -34,7 +34,7 @@ object Test {
             CustomKeyRegistry.register(
                 killPlayerKey,
                 KillPlayerAction,
-                PlayerReturnValueReader
+                Optional.of(PlayerReturnValueReader)
             )
         } catch (e: IllegalStateException) {
             player.sendMessage("Note: Kill player key was already registered: ${e.message}")
@@ -50,7 +50,7 @@ object Test {
             .width(80)
             .build()
 
-        val action = KeyedAction(killPlayerKey)
+        val action = KeyedAction(killPlayerKey, Optional.empty())
 
         val testButton = Button(buttonData, Optional.of(action))
 

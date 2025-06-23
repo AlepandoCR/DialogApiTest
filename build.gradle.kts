@@ -20,7 +20,7 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.6-R0.1-SNAPSHOT")
-    implementation("com.github.AlepandoCR:DialogAPI:v1.0.8")
+    implementation("com.github.AlepandoCR:DialogAPI:v1.1.1")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 }
 
