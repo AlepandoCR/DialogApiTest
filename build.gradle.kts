@@ -19,14 +19,14 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.21.6-R0.1-SNAPSHOT")
-    implementation("com.github.AlepandoCR:DialogAPI:v1.1.1")
+    compileOnly("io.papermc.paper:paper-api:1.21.8-R0.1-SNAPSHOT")
+    implementation(files("D:/Plugins/DialogAPI/build/libs/DialogAPI-1.0.0.jar"))
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 }
 
 tasks {
     runServer {
-        minecraftVersion("1.21.6")
+        minecraftVersion("1.21.8")
     }
 }
 

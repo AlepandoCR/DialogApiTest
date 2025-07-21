@@ -2,9 +2,7 @@ package alepando.dev.dialogApiTest
 
 import alepando.dev.dialogapi.body.types.PlainMessageDialogBody
 import alepando.dev.dialogapi.body.types.builders.ItemDialogBodyBuilder
-import alepando.dev.dialogapi.executor.CustomKeyRegistry
 import alepando.dev.dialogapi.executor.PlayerOpener.openDialog
-import alepando.dev.dialogapi.factory.actions.KillPlayerAction
 import alepando.dev.dialogapi.factory.button.Button
 import alepando.dev.dialogapi.factory.button.data.ButtonDataBuilder
 import alepando.dev.dialogapi.factory.button.data.KeyedAction
@@ -17,7 +15,6 @@ import alepando.dev.dialogapi.factory.input.types.builders.BooleanInputBuilder
 import alepando.dev.dialogapi.factory.input.types.builders.NumberRangeInputBuilder
 import alepando.dev.dialogapi.factory.input.types.builders.SingleOptionInputBuilder
 import alepando.dev.dialogapi.factory.input.types.builders.TextInputBuilder
-import alepando.dev.dialogapi.packets.reader.types.PlayerReturnValueReader
 import alepando.dev.dialogapi.types.builders.MultiActionDialogBuilder
 import net.kyori.adventure.text.Component
 import org.bukkit.Material
@@ -30,23 +27,14 @@ object Test {
         val killPlayerNamespace = "dialog"
         val killPlayerPath = "damage_player"
         val killPlayerKey = ResourceLocation(killPlayerNamespace, killPlayerPath)
-        try {
-            CustomKeyRegistry.register(
-                killPlayerKey,
-                KillPlayerAction,
-                Optional.of(PlayerReturnValueReader)
-            )
-        } catch (e: IllegalStateException) {
-            player.sendMessage("Note: Kill player key was already registered: ${e.message}")
-        }
 
         val buttonData = ButtonDataBuilder()
-            .label(Component.text("test"))
+            .label(Component.text("test button"))
             .width(100)
             .build()
 
         val exitButtonData = ButtonDataBuilder()
-            .label(Component.text("exit"))
+            .label(Component.text("exit button"))
             .width(80)
             .build()
 
